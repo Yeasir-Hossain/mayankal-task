@@ -4,7 +4,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import ScreenA from './components/ScreenA';
 import ScreenB from './components/ScreenB';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import FontAwesome5 from 'react-native-vector-icons/FontAwesome5'
+import Material from 'react-native-vector-icons/MaterialIcons'
 import OnProcess from './components/OnProcess';
 
 const Tab = createBottomTabNavigator();
@@ -18,50 +18,50 @@ export default function App() {
           // header: ({ navigation, route, options }) => {
           //   return;
           // },
-          tabBarIcon: ({ focused, size, color }) => {
+          tabBarIcon: ({ focused, size, color,styletop }) => {
             let iconname;
             if (route.name === 'Screen_A') {
-              iconname = 'atlassian';
-              size = focused ? 25 : 20;
-              color = focused ? 'pink' : 'grey'
+              iconname = 'home';
+              size = 30;
+              color = focused ? 'black' : 'grey'
+              styletop = focused ? {borderBottomColor:'red',borderBottomWidth:1} : ''
             }
             else if (route.name === 'Screen_B') {
-              iconname = 'btc'
-              size = focused ? 25 : 20
-              color = focused ? 'pink' : 'grey'
+              iconname = 'assessment'
+              size =30
+              color = focused ? 'black' : 'grey'
+              styletop = focused ? {borderBottomColor:'red',borderBottomWidth:1} : ''
             }
             else if (route.name === 'Screen_C') {
-              iconname = 'btc'
-              size = focused ? 25 : 20
-              color = focused ? 'pink' : 'grey'
+              iconname = 'mic'
+              size =  30
+              color = focused ? 'black' : 'grey'
+              styletop = focused ? {borderBottomColor:'red',borderBottomWidth:1} : ''
             }
             else if (route.name === 'Screen_D') {
-              iconname = 'btc'
-              size = focused ? 25 : 20
-              color = focused ? 'pink' : 'grey'
+              iconname = 'bookmark'
+              size =  30
+              color = focused ? 'black' : 'grey'
+              styletop = focused ? {borderBottomColor:'red',borderBottomWidth:1,} : ''
             }
             else if (route.name === 'Screen_E') {
-              iconname = 'btc'
-              size = focused ? 25 : 20
-              color = focused ? 'pink' : 'grey'
+              iconname = 'person'
+              size = 30
+              color = focused ? 'black' : 'grey'
+              styletop = focused ? {borderBottomColor:'red',borderBottomWidth:1} : ''
             }
             return (
               <View>
-                <FontAwesome5 name={iconname} size={size} color={color} ></FontAwesome5>
+                <Material name={iconname} size={size} color={color} style={styletop}></Material>
               </View>
 
             )
           },
           tabBarActiveTintColor: 'red',
-          tabBarInactiveTintColor: 'gray',
-          tabBarActiveBackgroundColor: 'white',
-          tabBarInactiveBackgroundColor: 'lightgrey',
-          tabBarStyle: {},
+          tabBarStyle: {
+            paddingTop:10
+          },
           tabBarShowLabel: false,
-          tabBarLabelStyle: {
-            fontSize: 16,
-            borderBottomWidth: 5
-          }
         })}
 
       >

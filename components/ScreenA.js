@@ -1,7 +1,9 @@
 import React from 'react';
-import { StyleSheet, Text, View, Pressable, Image } from 'react-native';
+import { StyleSheet, Text, View, Pressable, Image, TouchableOpacity } from 'react-native';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 import HeaderA from './HeaderA';
+import { Rating } from 'react-native-ratings';
+import CustomButton from './CustomButton';
 
 function ScreenA({ navigation }) {
     const onpressable = () => {
@@ -27,18 +29,35 @@ function ScreenA({ navigation }) {
                         </Text>
                     </View>
                     <View style={styles.imgback}>
-                        <Image style={styles.image} resizeMode='stretch' source={require('../assets/icon.png')} />
+                        <Image style={styles.image} resizeMode='stretch' source={require('../assets/enemy.jpeg')} />
+                        <View style={styles.button}>
+                            <View style={{
+                                marginRight: 10, zIndex: 100,
+                                borderRadius: 10,
+                            }}>
+                                <CustomButton title={''} icon={'exclamation-circle'} color={'tomato'} size={30}></CustomButton>
+                            </View>
+                            <View style={{
+                                zIndex: 100,
+                                borderRadius: 10,
+                            }}>
+                                <CustomButton title={'Audio Book'} icon={'play'} color={'blue'} size={20}></CustomButton>
+                            </View>
+                        </View>
                     </View>
                     <View style={styles.rating}>
                         <Text style={styles.ratingpoints}>
                             4.7
                         </Text>
                         <View style={styles.iconpack}>
-                            <FontAwesome5 name='star' size={20} style={[{marginRight:5}]} color={'#FFD700'} />
-                            <FontAwesome5 name='star' size={20} style={[{marginRight:5}]} color={'#FFD700'} />
-                            <FontAwesome5 name='star' size={20} style={[{marginRight:5}]} color={'#FFD700'} />
-                            <FontAwesome5 name='star' size={20} style={[{marginRight:5}]} color={'#FFD700'} />
-                            <FontAwesome5 name='star' size={20} style={[{marginRight:5}]} color={'#F0F0F0'} />
+                            <Rating
+                                ratingColor='#3498db'
+                                ratingBackgroundColor='#c8c7c8'
+                                ratingCount={5}
+                                startingValue={4}
+                                imageSize={16}
+                                readonly={true}
+                            />
                         </View>
                     </View>
                     <Text style={styles.ashtext}>892 Ratings on Google Play</Text>
@@ -65,7 +84,7 @@ const styles = StyleSheet.create({
         backgroundColor: 'white',
         marginLeft: 5,
         marginRight: 5,
-        paddingTop:20
+        paddingTop: 20,
     },
     ashtext: {
         fontSize: 12,
@@ -81,13 +100,22 @@ const styles = StyleSheet.create({
         marginTop: 10,
         marginLeft: '5%',
         paddingLeft: 55,
-        backgroundColor: '#F5F5F5'
+        backgroundColor: '#F5F5F5',
+
     },
     image: {
         width: 350,
         height: 250,
         borderTopLeftRadius: 50,
         borderBottomLeftRadius: 50,
+    },
+    button: {
+        zIndex: 10,
+        position: 'absolute',
+        flexDirection: 'row',
+        alignItems: 'center',
+        right: 10,
+        bottom: 10
     },
     flexbox: {
         display: 'flex',
@@ -113,7 +141,7 @@ const styles = StyleSheet.create({
     bookstarting: {
         flex: 1,
         backgroundColor: 'white',
-        paddingTop:20,
+        paddingTop: 20,
         marginLeft: 5,
         marginRight: 5,
     },

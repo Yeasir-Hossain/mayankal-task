@@ -1,4 +1,5 @@
 import React from 'react';
+import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5'
 
@@ -22,11 +23,16 @@ const HeaderB = () => {
 
 const styles = StyleSheet.create({
     icons: {
-        backgroundColor:'white',
+        backgroundColor: 'white',
         display: 'flex',
-        flexDirection:'row',
-        justifyContent:'space-between',
-        padding:12
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems:'center',
+        paddingLeft:5,
+        paddingRight:5,
+        paddingTop:10,
+        paddingBottom:10,
+        marginTop: StatusBar.currenHeight || 15,
     },
     text: {
         fontSize:18
