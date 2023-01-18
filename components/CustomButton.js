@@ -2,7 +2,7 @@ import React from 'react';
 import { Pressable, StyleSheet, Text, View } from 'react-native';
 import FontAwesome5Icon from 'react-native-vector-icons/FontAwesome5';
 
-const CustomButton = ({ title, icon, color, size }) => {
+const CustomButton = ({ title, icon, color, size,iconcolor }) => {
     return (
         <Pressable
             style={({ pressed }) => [
@@ -14,7 +14,7 @@ const CustomButton = ({ title, icon, color, size }) => {
         >
             <View style={styles.flex}>
                 <View>
-                    <FontAwesome5Icon name={icon} size={size} />
+                    <FontAwesome5Icon name={icon} size={size} color={iconcolor} />
                 </View>
                 {
                     title && <Text style={styles.buttontext}>

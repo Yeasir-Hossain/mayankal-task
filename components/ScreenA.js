@@ -35,13 +35,13 @@ function ScreenA({ navigation }) {
                                 marginRight: 10, zIndex: 100,
                                 borderRadius: 10,
                             }}>
-                                <CustomButton title={''} icon={'exclamation-circle'} color={'tomato'} size={30}></CustomButton>
+                                <CustomButton title={''} icon={'exclamation-circle'} color={'tomato'} size={30} iconcolor={'white'}></CustomButton>
                             </View>
                             <View style={{
                                 zIndex: 100,
                                 borderRadius: 10,
                             }}>
-                                <CustomButton title={'Audio Book'} icon={'play'} color={'blue'} size={20}></CustomButton>
+                                <CustomButton title={'Audio Book'} icon={'play'} color={'blue'} size={20} iconcolor={'white'}></CustomButton>
                             </View>
                         </View>
                     </View>
@@ -121,6 +121,7 @@ const styles = StyleSheet.create({
         display: 'flex',
         flexDirection: 'row',
         justifyContent: 'space-between',
+        alignItems:'center',
         paddingTop: 10,
         paddingBottom: 10,
     },
