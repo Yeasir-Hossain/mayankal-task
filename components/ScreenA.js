@@ -6,7 +6,6 @@ import HeaderA from './HeaderA';
 function ScreenA({ navigation }) {
     const onpressable = () => {
         navigation.navigate('Screen_B')
-        // navigation.replace('Screen_B')
     }
     return (
         <>
@@ -35,11 +34,11 @@ function ScreenA({ navigation }) {
                             4.7
                         </Text>
                         <View style={styles.iconpack}>
-                            <FontAwesome5 name='trophy' size={20} style={[{marginRight:5}]} color={'#FFD700'} />
-                            <FontAwesome5 name='trophy' size={20} style={[{marginRight:5}]} color={'#FFD700'} />
-                            <FontAwesome5 name='trophy' size={20} style={[{marginRight:5}]} color={'#FFD700'} />
-                            <FontAwesome5 name='trophy' size={20} style={[{marginRight:5}]} color={'#FFD700'} />
-                            <FontAwesome5 name='trophy' size={20} style={[{marginRight:5}]} color={'#F0F0F0'} />
+                            <FontAwesome5 name='star' size={20} style={[{marginRight:5}]} color={'#FFD700'} />
+                            <FontAwesome5 name='star' size={20} style={[{marginRight:5}]} color={'#FFD700'} />
+                            <FontAwesome5 name='star' size={20} style={[{marginRight:5}]} color={'#FFD700'} />
+                            <FontAwesome5 name='star' size={20} style={[{marginRight:5}]} color={'#FFD700'} />
+                            <FontAwesome5 name='star' size={20} style={[{marginRight:5}]} color={'#F0F0F0'} />
                         </View>
                     </View>
                     <Text style={styles.ashtext}>892 Ratings on Google Play</Text>
