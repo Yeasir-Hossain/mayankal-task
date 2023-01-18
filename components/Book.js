@@ -1,14 +1,10 @@
 import React from 'react';
-import { StyleSheet, Text, View, Pressable, Image, TouchableOpacity } from 'react-native';
-import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
+import { StyleSheet, Text, View, Pressable, Image } from 'react-native';
 import HeaderA from './HeaderA';
 import { Rating } from 'react-native-ratings';
 import CustomButton from './CustomButton';
 
-function ScreenA({ navigation }) {
-    const onpressable = () => {
-        navigation.navigate('Screen_B')
-    }
+function Book({ navigation }) {
     return (
         <>
             <HeaderA navigation={navigation}></HeaderA>
@@ -29,7 +25,7 @@ function ScreenA({ navigation }) {
                         </Text>
                     </View>
                     <View style={styles.imgback}>
-                        <Image style={styles.image} resizeMode='stretch' source={require('../assets/enemy.jpeg')} />
+                        <Image style={styles.image} resizeMode='stretch' source={require('../assets/ENEMY_baja-original.jpeg')} />
                         <View style={styles.button}>
                             <View style={{
                                 marginRight: 10, zIndex: 100,
@@ -41,7 +37,7 @@ function ScreenA({ navigation }) {
                                 zIndex: 100,
                                 borderRadius: 10,
                             }}>
-                                <CustomButton title={'Audio Book'} icon={'play'} color={'blue'} size={20} iconcolor={'white'}></CustomButton>
+                                <CustomButton title={'Audio Book'} icon={'play'} color={'#000066'} size={20} iconcolor={'white'}></CustomButton>
                             </View>
                         </View>
                     </View>
@@ -118,7 +114,6 @@ const styles = StyleSheet.create({
         bottom: 10
     },
     flexbox: {
-        display: 'flex',
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems:'center',
@@ -126,7 +121,6 @@ const styles = StyleSheet.create({
         paddingBottom: 10,
     },
     rating: {
-        display: 'flex',
         flexDirection: 'row',
         marginTop: 20
     },
@@ -134,7 +128,6 @@ const styles = StyleSheet.create({
         fontSize: 35
     },
     iconpack: {
-        display: 'flex',
         flexDirection: 'row',
         alignItems: 'center',
         marginLeft: 10,
@@ -152,4 +145,4 @@ const styles = StyleSheet.create({
 });
 
 
-export default ScreenA;
+export default Book;

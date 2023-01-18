@@ -1,8 +1,8 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
-import ScreenA from './components/ScreenA';
-import ScreenB from './components/ScreenB';
+import Book from './components/Book';
+import Home from './components/Home';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Material from 'react-native-vector-icons/MaterialIcons'
 import OnProcess from './components/OnProcess';
@@ -14,13 +14,14 @@ export default function App() {
     <NavigationContainer
     >
       <Tab.Navigator
+      initialRouteName='Screen_B'
         screenOptions={({ route }) => ({
           // header: ({ navigation, route, options }) => {
           //   return;
           // },
           tabBarIcon: ({ focused, size, color,styletop }) => {
             let iconname;
-            if (route.name === 'Screen_A') {
+            if (route.name === 'Home') {
               iconname = 'home';
               size = 30;
               color = focused ? 'black' : 'grey'
@@ -65,13 +66,12 @@ export default function App() {
         })}
 
       >
-        {/* options={{tabBarBadge:3}} */}
-        <Tab.Screen name='Screen_A' component={ScreenA}
+        <Tab.Screen name='Home' component={Home}
           options={{
             header: ({ navigation }) => null
           }}
         />
-        <Tab.Screen name='Screen_B' component={ScreenB} 
+        <Tab.Screen name='Screen_B' component={Book} 
         options={{
           header: ({ navigation }) => null
         }}/>

@@ -7,7 +7,7 @@ const HeaderB = () => {
     return (
         <View style={styles.icons}>
             <View>
-                <FontAwesome5 name='trophy' size={20} />
+                <FontAwesome5 name='bars' size={20} />
             </View>
             <View>
                 <Text style={styles.text}>
@@ -15,7 +15,7 @@ const HeaderB = () => {
                 </Text>
             </View>
             <View>
-                <FontAwesome5 name='trophy' size={20} />
+                <FontAwesome5 name='search' size={20} />
             </View>
         </View>
     );

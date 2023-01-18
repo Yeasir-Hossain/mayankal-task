@@ -1,17 +1,19 @@
 import React from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { Pressable, StyleSheet, Text, View } from 'react-native';
+import { Pressable, StyleSheet, View } from 'react-native';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5'
 
 const HeaderA = ({ navigation }) => {
     const onpressable = () => {
-        navigation.navigate('Screen_B')
+        navigation.navigate('Home')
     }
     return (
         <View style={styles.icons}>
             <View>
                 <Pressable onPress={onpressable} style={({ pressed }) => ({
-                })} >
+                })}
+                    hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }}
+                >
                     <FontAwesome5 name='chevron-left' size={22} />
                 </Pressable>
             </View>
@@ -25,14 +27,13 @@ const HeaderA = ({ navigation }) => {
 const styles = StyleSheet.create({
     icons: {
         backgroundColor: 'white',
-        display: 'flex',
         flexDirection: 'row',
         justifyContent: 'space-between',
-        alignItems:'center',
-        paddingLeft:5,
-        paddingRight:5,
-        paddingTop:10,
-        paddingBottom:10,
+        alignItems: 'center',
+        paddingLeft: 5,
+        paddingRight: 5,
+        paddingTop: 10,
+        paddingBottom: 10,
         marginTop: StatusBar.currenHeight || 15,
     },
 });
